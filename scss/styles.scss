@@ -1,0 +1,307 @@
+// black white level
+$black-1: rgba(0, 0, 0, 0.1);
+$black-2: rgba(0, 0, 0, 0.2);
+$black-3: rgba(0, 0, 0, 0.3);
+$black-4: rgba(0, 0, 0, 0.4);
+$black-5: rgba(0, 0, 0, 0.5);
+$black-6: rgba(0, 0, 0, 0.6);
+$black-7: rgba(0, 0, 0, 0.7);
+$black-8: rgba(0, 0, 0, 0.8);
+$black-9: rgba(0, 0, 0, 0.9);
+
+$white-1: rgba(255, 255, 255, 0.1);
+$white-2: rgba(255, 255, 255, 0.2);
+$white-3: rgba(255, 255, 255, 0.3);
+$white-4: rgba(255, 255, 255, 0.4);
+$white-5: rgba(255, 255, 255, 0.5);
+$white-6: rgba(255, 255, 255, 0.6);
+$white-7: rgba(255, 255, 255, 0.7);
+$white-8: rgba(255, 255, 255, 0.8);
+$white-9: rgba(255, 255, 255, 0.9);
+
+$primary-color: #D3B025;
+$secondary-color: #232323;
+$primary-font: "Roboto", sans-serif;
+$secondary-font: "Oswald", sans-serif;
+
+@import 'mixin';
+@import 'components';
+
+/*=============GLOBAL=================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    font-size: 16px;
+    font-family: $primary-font;
+    scroll-behavior: smooth;
+    @include column-between;
+
+    &.locked {
+        overflow: hidden;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $secondary-color;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ffffff;
+}
+
+::selection {
+    background: $secondary-color;
+    color: #ffffff;
+}
+
+a,
+a:hover,
+a:active,
+a:visited {
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+    background-color: transparent;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    padding-left: 30px;
+}
+
+img {
+    user-select: none;
+    display: block;
+}
+
+svg {
+    display: block;
+}
+
+button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+a {
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+input {
+    outline: none;
+    font-family: var(--general-font);
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+        display: none;
+    }
+}
+
+main {
+    width: 100%;
+    min-height: 50vh;
+}
+
+section {
+    width: 100%;
+    padding: 20px 0;
+    position: relative;
+}
+
+.swiper {
+    width: 100%;
+    z-index: 0;
+
+    .swiper-slide {
+        @include row-center;
+    }
+
+    &.pagination-true {
+        padding-bottom: 40px;
+
+        .swiper-pagination {
+            bottom: 0 !important;
+        }
+    }
+}
+
+.row {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container {
+    @media (min-width: 1600px) {
+        max-width: 1500px;
+    }
+}
+
+
+// header 
+header {
+    position: relative;
+    width: 100%;
+    
+    .general-navbar{
+        width: 100%;
+        padding: 15px 0;
+        background-color: #fff;
+        position: relative;
+        @media(min-width: 1200px){
+            background-color: transparent;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    a.logo {
+        img {
+            max-width: 115px;
+        }
+    }
+
+    .mobile-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+
+        .menu-links {
+            width: 100%;
+            @include column-align-start;
+            padding: 15px;
+
+            a {
+                margin: 8px 0;
+                font-size: 16px;
+                font-weight: 500;
+                text-transform: uppercase;
+                color: $secondary-color;
+                font-family: $secondary-font;
+                letter-spacing: 1px;
+                &:hover{
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+
+    .header-content{
+        width: 100%;
+        min-height: 100vh;
+        background-image: url('../images/header-banner.jpeg');
+        background-repeat: no-repeat;
+        @media(min-width: 992px){
+            padding-top: 80px;
+        }
+        .image{
+            width: 100%;
+            max-width: 680px;
+            img{
+                width: 100%;
+            }
+        }
+    }
+    .nav-links{
+        width: 100%;
+        @include row-between;
+        a{
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 400;
+            font-family: $secondary-font;
+            letter-spacing: 1px;
+            &:hover{
+                opacity: 0.8;
+            }
+        }
+        @media(min-width: 1400px){
+            max-width: 80%;
+        }
+    }
+    .inner-content{
+        width: 100%;
+        @include column-align-start;
+        .content-title{
+            color: #fff;
+            text-transform: uppercase;
+            font-family: $secondary-font;
+            @media(min-width: 992px){
+                font-size: 80px;
+            }
+            @media(min-width: 1200px){
+                font-size: 110px;
+            }
+        }
+        form{
+            width: 100%;
+            max-width: 450px;
+            @include column-center;
+            input{
+                width: 100%;
+                padding: 15px 25px;
+                background-color: #fff;
+                border: none;
+                outline: none;
+                border-radius: 5px;
+                margin-bottom: 20px;
+            }
+            button{
+                width: 100%;
+                @include row-center;
+                background-color: $primary-color;
+                color: $secondary-color;
+                font-family: $secondary-font;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                padding: 15px;
+                border-radius: 5px;
+            }
+        }
+        .bottom-text{
+            width: 100%;
+            @include row-justify-start;
+            .icon{
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: rgba(0, 0, 0, 0.3);
+                @include row-center;
+                color: #fff;
+            }
+            .text{
+                color: rgba(255, 255, 255, 0.5);
+                a{
+                    color: #fff;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
