@@ -165,13 +165,14 @@ section {
 header {
     position: relative;
     width: 100%;
-    
-    .general-navbar{
+
+    .general-navbar {
         width: 100%;
         padding: 15px 0;
         background-color: #fff;
         position: relative;
-        @media(min-width: 1200px){
+
+        @media(min-width: 1200px) {
             background-color: transparent;
             position: absolute;
             top: 0;
@@ -179,11 +180,7 @@ header {
         }
     }
 
-    a.logo {
-        img {
-            max-width: 115px;
-        }
-    }
+
 
     .mobile-menu {
         position: absolute;
@@ -205,65 +202,79 @@ header {
                 color: $secondary-color;
                 font-family: $secondary-font;
                 letter-spacing: 1px;
-                &:hover{
+
+                &:hover {
                     opacity: 0.8;
                 }
             }
         }
     }
 
-    .header-content{
+    .header-content {
         width: 100%;
         min-height: 100vh;
         background-image: url('../images/header-banner.jpeg');
         background-repeat: no-repeat;
-        @media(min-width: 992px){
+
+        @media(min-width: 992px) {
             padding-top: 80px;
         }
-        .image{
+
+        .image {
             width: 100%;
             max-width: 680px;
-            img{
+
+            img {
                 width: 100%;
             }
         }
     }
-    .nav-links{
+
+    .nav-links {
         width: 100%;
         @include row-between;
-        a{
+
+        a {
             color: #fff;
             text-transform: uppercase;
             font-weight: 400;
             font-family: $secondary-font;
             letter-spacing: 1px;
-            &:hover{
+
+            &:hover {
                 opacity: 0.8;
             }
         }
-        @media(min-width: 1400px){
+
+        @media(min-width: 1400px) {
             max-width: 80%;
         }
     }
-    .inner-content{
+
+    .inner-content {
         width: 100%;
         @include column-align-start;
-        .content-title{
+
+        .content-title {
             color: #fff;
             text-transform: uppercase;
             font-family: $secondary-font;
-            @media(min-width: 992px){
+
+            @media(min-width: 992px) {
                 font-size: 80px;
             }
-            @media(min-width: 1200px){
+
+            @media(min-width: 1200px) {
                 font-size: 110px;
             }
         }
-        form{
+
+        form {
             width: 100%;
             max-width: 450px;
             @include column-center;
-            input{
+
+            input {
                 width: 100%;
                 padding: 15px 25px;
                 background-color: #fff;
@@ -272,7 +283,8 @@ header {
                 border-radius: 5px;
                 margin-bottom: 20px;
             }
-            button{
+
+            button {
                 width: 100%;
                 @include row-center;
                 background-color: $primary-color;
@@ -284,10 +296,12 @@ header {
                 border-radius: 5px;
             }
         }
-        .bottom-text{
+
+        .bottom-text {
             width: 100%;
             @include row-justify-start;
-            .icon{
+
+            .icon {
                 width: 50px;
                 height: 50px;
                 border-radius: 50%;
@@ -295,12 +309,69 @@ header {
                 @include row-center;
                 color: #fff;
             }
-            .text{
+
+            .text {
                 color: rgba(255, 255, 255, 0.5);
-                a{
+
+                a {
                     color: #fff;
                     text-decoration: underline;
                 }
+            }
+        }
+    }
+}
+
+
+footer {
+    width: 100%;
+    padding: 30px 0;
+    background-color: #fff;
+
+    .footer-top {
+        width: 100%;
+        padding: 30px 0;
+        border-bottom: 1px solid $black-1;
+
+        .footer-links {
+            @include row-center;
+            flex-wrap: wrap;
+            gap: 15px;
+
+            a {
+                color: $secondary-color;
+                font-family: $secondary-font;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+        }
+    }
+
+    .footer-bottom {
+        width: 100%;
+
+        .footer-text {
+            width: 100%;
+            color: $secondary-color;
+            font-family: $secondary-font;
+            letter-spacing: 1px;
+            text-align: center;
+            @media (min-width: 1200px){
+                text-align: start;
+            }
+
+            a {
+                color: $primary-color;
+            }
+        }
+
+        .social-icons {
+            @include row-center;
+            gap: 15px;
+
+            a {
+                font-size: 22px;
+                color: $secondary-color;
             }
         }
     }

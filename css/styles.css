@@ -1,3 +1,7 @@
+a.logo img {
+  max-width: 115px;
+}
+
 .purchase-button {
   font-family: "Oswald", sans-serif;
   font-size: 12px;
@@ -268,9 +272,6 @@ header .general-navbar {
     left: 0;
   }
 }
-header a.logo img {
-  max-width: 115px;
-}
 header .mobile-menu {
   position: absolute;
   top: 100%;
@@ -415,4 +416,58 @@ header .inner-content .bottom-text .text {
 header .inner-content .bottom-text .text a {
   color: #fff;
   text-decoration: underline;
+}
+
+footer {
+  width: 100%;
+  padding: 30px 0;
+  background-color: #fff;
+}
+footer .footer-top {
+  width: 100%;
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+footer .footer-top .footer-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+footer .footer-top .footer-links a {
+  color: #232323;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+footer .footer-bottom {
+  width: 100%;
+}
+footer .footer-bottom .footer-text {
+  width: 100%;
+  color: #232323;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 1px;
+  text-align: center;
+}
+@media (min-width: 1200px) {
+  footer .footer-bottom .footer-text {
+    text-align: start;
+  }
+}
+footer .footer-bottom .footer-text a {
+  color: #D3B025;
+}
+footer .footer-bottom .social-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+footer .footer-bottom .social-icons a {
+  font-size: 22px;
+  color: #232323;
 }/*# sourceMappingURL=styles.css.map */
