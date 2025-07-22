@@ -215,6 +215,7 @@ header {
         min-height: 100vh;
         background-image: url('../images/header-banner.jpeg');
         background-repeat: no-repeat;
+        z-index: 999;
 
         @media(min-width: 992px) {
             padding-top: 80px;
@@ -223,9 +224,11 @@ header {
         .image {
             width: 100%;
             max-width: 680px;
+            z-index: 999;
 
             img {
                 width: 100%;
+                object-fit: contain;
             }
         }
     }
@@ -356,7 +359,8 @@ footer {
             font-family: $secondary-font;
             letter-spacing: 1px;
             text-align: center;
-            @media (min-width: 1200px){
+
+            @media (min-width: 1200px) {
                 text-align: start;
             }
 
@@ -372,6 +376,225 @@ footer {
             a {
                 font-size: 22px;
                 color: $secondary-color;
+            }
+        }
+    }
+}
+
+.about-section {
+    .card-row {
+        position: relative;
+        justify-content: center;
+        z-index: 1;
+        transition: 0.2s;
+
+        .col-12 {
+            @include row-center;
+        }
+
+        .about-shape {
+
+            position: absolute;
+            z-index: -1;
+
+
+            &.shape-1 {
+                @include row-end;
+                top: -50%;
+                right: 0;
+            }
+
+            &.shape-2 {
+                @include row-start;
+                bottom: -30%;
+                left: 0;
+            }
+
+            img {
+                display: none;
+
+                @media (min-width: 1200px) {
+                    display: flex;
+                }
+            }
+        }
+    }
+
+    .about-card {
+        width: 100%;
+        max-width: 320px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px $black-1;
+        padding: 40px;
+        @include column-center;
+        text-align: center;
+        background-color: #fff;
+
+        .icon {
+            @include row-center;
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+            border-radius: 50%;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 52%;
+                background-color: rgba($color: $primary-color, $alpha: 0.3);
+                transition: 0.5s;
+                transform: rotate(-40deg) translate(-15px, -6px);
+                z-index: 1;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 0;
+                background-color: rgba($color: $primary-color, $alpha: 0.3);
+                transition: 0.5s;
+                transform: rotate(-40deg) translate(15px, 6px);
+                z-index: 1;
+            }
+
+            svg {
+                width: 60%;
+                height: 60%;
+                object-fit: contain;
+                transition: 0.3s;
+                z-index: 2;
+            }
+
+        }
+
+        .card-title {
+            font-weight: 600;
+            font-size: 18px;
+            margin: 20px 0 10px;
+        }
+
+        .card-text {
+            color: $black-5;
+        }
+
+        &:hover {
+            .icon {
+                svg {
+                    color: #fff;
+                }
+
+                &::before {
+                    height: 0;
+                    opacity: 0;
+                }
+
+                &::after {
+                    opacity: 1;
+                    height: 100%;
+                    background-color: $primary-color;
+                    transform: translate(0, 0);
+                }
+            }
+        }
+    }
+
+    .card-row {
+        .col-12:nth-child(even) {
+            .about-card {
+                .icon {
+                    &::before {
+                        height: 0;
+                    }
+
+                    &::after {
+                        height: 52%;
+                    }
+                }
+
+                &:hover {
+                    .icon {
+
+                        &::after {
+                            height: 0;
+                            opacity: 0;
+                        }
+
+                        &::before {
+                            opacity: 1;
+                            height: 100%;
+                            background-color: $primary-color;
+                            transform: translate(0, 0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .about-bottom-text{
+        width: 100%;
+        @include row-center;
+        gap: 15px;
+        padding: 40px 20px;
+        font-size: 20px;
+        span{
+            font-weight: 500;
+            text-decoration: underline;
+        }
+        @media(min-width: 992px){
+            font-size: 24px;
+        }
+    }
+
+    .about-reports{
+        width: 100%;
+        background-color: $primary-color;
+        border-radius: 10px;
+        margin-top: 20px;
+        
+        .col-12{
+            border-bottom: 1px solid #fff;
+            &:last-child{
+                border: none;
+            }
+            @media (min-width: 992px){
+                border-bottom: none;
+                border-right: 1px solid #fff;
+            }
+            &:last-child{
+                border: none;
+            }
+        }
+        .inner-content{
+            padding: 20px;
+            @include column-center;
+            text-align: center;
+            gap: 15px;
+            @media (min-width: 992px){
+                @include row-center;
+                text-align: start;
+                padding: 40px 20px;
+            }
+            .value{
+                color: #fff;
+                font-size: 54px;
+                font-weight: 600;
+                white-space: nowrap;
+            }
+            .text{
+                max-width: 200px;
+                font-size: 20px;
+                span{
+                    text-decoration: underline;
+                    font-weight: 500;
+                }
             }
         }
     }
